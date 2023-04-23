@@ -12,6 +12,8 @@ function changeImage(){
 
 // Function to handle button clicks and display the 8 ball answer.
 function getAnswer() {
+    console.log('getAnswer');
+
     var question = document.getElementById("question").value;
     var answers = [
       "It is certain.",

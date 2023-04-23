@@ -5,20 +5,20 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	  <button id="top-left-button">Reset</button>
-    <!-- User input question and get response from clicking play button -->
-    <div id="input-response-field">
-      <input type="text" id="question" placeholder="Enter your question here">
-      <button id="play-button" onclick="getAnswer()">Play</button>
-	  <p id="answer"></p>
-    </div>
-    <!-- Change image with button -->
+	<button id="top-left-button">Reset</button>
 	<div class="container">
-	<div class="split">
-		<img id="8ball" src="./assests/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
-		<br>
-		<button id="changeImage" onclick="changeImage()">Click me to change image</button>
-	</div>
+		<!-- Change image with button -->
+		<div class="split">
+			<img id="8ball" src="./assests/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+			<br>
+			<button id="changeImage" onclick="changeImage()">Click me to change image</button>
+		</div>
+		<!-- User input question and get response from clicking play button -->
+		<div id="input-response-field">
+			<input type="text" id="question" placeholder="Enter your question here">
+			<button id="play-button" onclick="getAnswer()">Play</button>
+			<p id="answer"></p>
+	  	</div>
 	</div>
 	<script src="App.js"></script>
 </body>

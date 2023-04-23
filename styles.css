@@ -25,11 +25,6 @@ button {
     margin-top: 20px;
 }
 
-#play-button {
-    display: block;
-    margin: 0 auto;
-}
-
 #top-left-button {
     position: absolute;
     top: 10px;
@@ -37,7 +32,7 @@ button {
 }
 .container{
     display: flex;
-    transform: translateY(10%)
+    transform: translateY(20%);
 }
 .split{
     width: 50%;
@@ -60,11 +55,9 @@ button {
 }
 
 #input-response-field {
-    position: absolute;
-    background-color: white;
+    transform: translateY(40%);
     width: 50%;
     height: 250px;
-    right: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
