@@ -41,3 +41,6 @@ function getAnswer() {
     document.getElementById("question").value = "";
     document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
   }
+function onInputEnter() {
+    
+}

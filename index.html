@@ -16,7 +16,7 @@
 		<!-- User input question and get response from clicking play button -->
 		<div id="input-response-field">
 			<p id="answer"></p>
-			<input type="text" id="question" placeholder="Enter your question here">
+			<input type="text" id="question" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
 			<button id="play-button" onclick="getAnswer()">Play</button>
 	  	</div>
 	</div>
