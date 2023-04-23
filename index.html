@@ -11,37 +11,6 @@
       <input type="text" id="question" placeholder="Enter your question here">
       <button id="play-button" onclick="getAnswer()">Play</button>
       <p id="answer"></p>
-      <script>
-        // Function to handle button clicks and display the 8 ball answer.
-        function getAnswer() {
-          var question = document.getElementById("question").value;
-          var answers = [
-            "It is certain.",
-            "It is decidedly so.",
-            "Without a doubt.",
-            "Yes - definitely.",
-            "You may rely on it.",
-            "As I see it, yes.",
-            "Most likely.",
-            "Outlook good.",
-            "Yes.",
-            "Signs point to yes.",
-            "Reply hazy, try again.",
-            "Ask again later.",
-            "Better not tell you now.",
-            "Cannot predict now.",
-            "Concentrate and ask again.",
-            "Don't count on it.",
-            "Outlook not so good.",
-            "My sources say no.",
-            "Very doubtful.",
-            "My reply is no."
-          ];
-          var answer = answers[Math.floor(Math.random() * answers.length)];
-          document.getElementById("question").value = "";
-          document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
-        }
-      </script>
     </div>
     <!-- Change image with button -->
 	  <div class="container">
