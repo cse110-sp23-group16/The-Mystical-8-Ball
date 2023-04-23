@@ -2,83 +2,21 @@
 <html>
 <head>
 	<title>Magic 8 Ball App</title>
-	<style>
-		body {
-			background-image: url('assests/background_temp.jpg');
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			font-family: Arial, sans-serif;
-			color: white;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-
-		h1 {
-			margin-top: 50px;
-		}
-
-		button {
-			padding: 10px 20px;
-			background-color: #333;
-			color: white;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 18px;
-			margin-top: 20px;
-		}
-
-		#play-button {
-			display: block;
-			margin: 0 auto;
-		}
-
-		#top-left-button {
-			position: absolute;
-			top: 10px;
-			left: 10px;
-		}
-		.container{
-			display: flex;
-			transform: translateY(10%)
-		}
-		.split{
-			width: 50%;
-			position: relative;
-		}
-		#8ball{
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			max-height: 100%;
-			max-width: 100%;
-		}
-	</style>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	  <button id="top-left-button">Reset</button>
 	  <div class="container">
 		<div class="split">
-		  <img id="8ball" src="8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+		  <img id="8ball" src="./assests/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
 		  <br>
 		  <button id="changeImage" onclick="changeImage()">Click me to change image</button>
-		</div>  
+		</div>
 		<div class="split">
 		  <h1>Magic 8 Ball</h1>
 		  <button id="play-button">Play</button>
 		</div>
 	  </div>
-	<script>
-		// Add JavaScript code here to handle button clicks and display the 8 ball answer.
-		const listOfImages = ['8ball1.png', "8ball2.jpg"]
-		function changeImage(){
-    		let random = Math.floor(Math.random() * listOfImages.length);
-    		let image = document.getElementById("8ball");
-    		image.src = listOfImages[random];
-		}
-	</script>
+	<script src="App.js"></script> 
 </body>
 </html>
