@@ -2,115 +2,59 @@
 <html>
 <head>
 	<title>Magic 8 Ball App</title>
-	<style>
-		body {
-			background-image: url('assests/background_temp.jpg');
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			font-family: Arial, sans-serif;
-			color: white;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-
-		h1 {
-			margin-top: 50px;
-		}
-
-		button {
-			padding: 10px 20px;
-			background-color: #333;
-			color: white;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 18px;
-			margin-top: 20px;
-		}
-
-		
-
-		#top-left-button {
-			position: absolute;
-			top: 10px;
-			left: 10px;
-		}
-
-		/* Input and response components style */
-
-		#play-button {
-			display: block;
-			margin: 0 auto;
-		}
-
-		#input-response-field {
-			position: absolute;
-			background-color: white;
-			width: 50%;
-			height: 250px;
-			right: 0px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: flex-start;
-			gap: 10%;
-		}
-
-		input {
-			margin-top: 5%;
-			width: 50%;
-			height: 15%;
-			font-size: 120%;
-		}
-
-		#answer {
-			margin-top: 0%;
-			font-size: 120%;
-			color: black;
-		}
-	</style>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<button id="top-left-button">Reset</button>
-	<h1>Magic 8 Ball</h1>
-	<!-- User input question and get response from clicking play button -->
-	<div id="input-response-field">
-		<input type="text" id="question" placeholder="Enter your question here">
-		<button id="play-button" onclick="getAnswer()">Play</button>
-		<p id="answer"></p>
-		<script>
-			// Function to handle button clicks and display the 8 ball answer.
-			function getAnswer() {
-				var question = document.getElementById("question").value;
-				var answers = [
-					"It is certain.",
-					"It is decidedly so.",
-					"Without a doubt.",
-					"Yes - definitely.",
-					"You may rely on it.",
-					"As I see it, yes.",
-					"Most likely.",
-					"Outlook good.",
-					"Yes.",
-					"Signs point to yes.",
-					"Reply hazy, try again.",
-					"Ask again later.",
-					"Better not tell you now.",
-					"Cannot predict now.",
-					"Concentrate and ask again.",
-					"Don't count on it.",
-					"Outlook not so good.",
-					"My sources say no.",
-					"Very doubtful.",
-					"My reply is no."
-				];
-				var answer = answers[Math.floor(Math.random() * answers.length)];
-				document.getElementById("question").value = "";
-				document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
-			}
-		</script>
-	</div>
+	  <button id="top-left-button">Reset</button>
+    <!-- User input question and get response from clicking play button -->
+    <div id="input-response-field">
+      <input type="text" id="question" placeholder="Enter your question here">
+      <button id="play-button" onclick="getAnswer()">Play</button>
+      <p id="answer"></p>
+      <script>
+        // Function to handle button clicks and display the 8 ball answer.
+        function getAnswer() {
+          var question = document.getElementById("question").value;
+          var answers = [
+            "It is certain.",
+            "It is decidedly so.",
+            "Without a doubt.",
+            "Yes - definitely.",
+            "You may rely on it.",
+            "As I see it, yes.",
+            "Most likely.",
+            "Outlook good.",
+            "Yes.",
+            "Signs point to yes.",
+            "Reply hazy, try again.",
+            "Ask again later.",
+            "Better not tell you now.",
+            "Cannot predict now.",
+            "Concentrate and ask again.",
+            "Don't count on it.",
+            "Outlook not so good.",
+            "My sources say no.",
+            "Very doubtful.",
+            "My reply is no."
+          ];
+          var answer = answers[Math.floor(Math.random() * answers.length)];
+          document.getElementById("question").value = "";
+          document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
+        }
+      </script>
+    </div>
+    <!-- Change image with button -->
+	  <div class="container">
+      <div class="split">
+        <img id="8ball" src="./assests/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+        <br>
+        <button id="changeImage" onclick="changeImage()">Click me to change image</button>
+      </div>
+      <div class="split">
+        <h1>Magic 8 Ball</h1>
+        <button id="play-button">Play</button>
+      </div>
+	  </div>
+	<script src="App.js"></script> 
 </body>
 </html>
