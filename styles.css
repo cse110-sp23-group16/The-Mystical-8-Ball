@@ -55,7 +55,7 @@ button {
 }
 
 #input-response-field {
-    transform: translateY(40%);
+    transform: translateY(50%);
     width: 50%;
     height: 250px;
     display: flex;
@@ -76,4 +76,5 @@ input {
     margin-top: 0%;
     font-size: 120%;
     color: black;
+    height: 10px;
 }
