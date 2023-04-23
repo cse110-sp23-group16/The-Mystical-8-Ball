@@ -40,14 +40,45 @@
 			top: 10px;
 			left: 10px;
 		}
+		.container{
+			display: flex;
+			transform: translateY(10%)
+		}
+		.split{
+			width: 50%;
+			position: relative;
+		}
+		#8ball{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-height: 100%;
+			max-width: 100%;
+		}
 	</style>
 </head>
 <body>
-	<button id="top-left-button">Reset</button>
-	<h1>Magic 8 Ball</h1>
-	<button id="play-button">Play</button>
+	  <button id="top-left-button">Reset</button>
+	  <div class="container">
+		<div class="split">
+		  <img id="8ball" src="8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+		  <br>
+		  <button id="changeImage" onclick="changeImage()">Click me to change image</button>
+		</div>  
+		<div class="split">
+		  <h1>Magic 8 Ball</h1>
+		  <button id="play-button">Play</button>
+		</div>
+	  </div>
 	<script>
 		// Add JavaScript code here to handle button clicks and display the 8 ball answer.
+		const listOfImages = ['8ball1.png', "8ball2.jpg"]
+		function changeImage(){
+    		let random = Math.floor(Math.random() * listOfImages.length);
+    		let image = document.getElementById("8ball");
+    		image.src = listOfImages[random];
+		}
 	</script>
 </body>
 </html>
