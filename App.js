@@ -10,6 +10,14 @@ function changeImage(){
     image.src = listOfImages[random];
 }
 
+function loadingAns() {
+  console.log('loading answer');
+  let question = document.getElementById("question").value;
+  let answer = "loading"
+  document.getElementById("question").value = "";
+  document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
+}
+
 // Function to handle button clicks and display the 8 ball answer.
 function getAnswer() {
     console.log('getAnswer');

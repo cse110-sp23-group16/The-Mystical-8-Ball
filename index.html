@@ -17,7 +17,7 @@
 		<div id="input-response-field">
 			<p id="answer"></p>
 			<input type="text" id="question" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
-			<button id="play-button" onclick="getAnswer(); sound()">Play</button>
+			<button id="play-button" onclick="loadingAns(), setTimeout(getAnswer, 5000); sound()">Play</button>
 	  </div>
 	</div>
 	<script src="App.js"></script>
