@@ -10,4 +10,4 @@
 
 **Response voice**
   - Text speech function to read up responses from the magic 8-ball.
-  - Aiden: There seems to be some option to change the voice (such as the speech pitch and rate), can experiment with it if interested.
+  - It is just the default text-speech api.
