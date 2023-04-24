@@ -2,12 +2,32 @@
 <html>
 <head>
 	<title>Magic 8 Ball App</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 100%;
+            background-image: url('assets/LandingBackground.png');
+            background-size: 100% 1024px;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;  
+        }
+        button {
+            position: relative;
+            top: 37em;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }   
+    </style>
+    <script src="App.js"></script>
 </head>
-<body style="background-image: url('assets/LandingBackground.png')">
-	<div class="container">
-		<!-- Change image with button -->
-	</div>
-	<script src="App.js"></script>
+<body>
+    <a href="8ball.html"><button>Ask the Magic 8 Ball</button></a>
 </body>
 </html>
