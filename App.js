@@ -1,5 +1,5 @@
 // Add JavaScript code here to handle button clicks and display the 8 ball answer.
-const listOfImages = ['./assests/8ball1.png', "./assests/8ball2.jpg"]
+const listOfImages = ['./assets/8ball1.png', "./assets/8ball2.png", "./assets/8ball3.png", "./assets/8ball4.png", "./assets/8ball5.png", "./assets/8ball6.png", "./assets/8ball7.png"]
 function changeImage(){
     console.log('changeImage() call');
     let random = Math.floor(Math.random() * listOfImages.length);
