@@ -41,3 +41,9 @@ function getAnswer() {
     utterance = new SpeechSynthesisUtterance(answer);
     speechSynthesis.speak(utterance);
   }
+
+// Function to play sound when the button "Play" is clicked
+function sound(){
+  var snd = new Audio('./assets/magic-8-ball-sound.mp3')
+  snd.play();
+}
