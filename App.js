@@ -3,14 +3,17 @@ const listOfImages = ['./assets/8ball1.png', "./assets/8ball2.png", "./assets/8b
 function changeImage(){
     console.log('changeImage() call');
     let random = Math.floor(Math.random() * listOfImages.length);
-    let image = document.getElementById("8ball");
+    let image = document.getElementById("eight-ball-image");
     image.src = listOfImages[random];
 }
 
 // Function to handle button clicks and display the 8 ball answer.
 function getAnswer() {
     var question = document.getElementById("question").value;
-    if (!question) { return; }
+    if (!question) { 
+      document.getElementById("answer").innerHTML = "Please ask a yes / no question";
+      return; 
+    }
     var answers = [
       "It is certain.",
       "It is decidedly so.",
@@ -36,7 +39,7 @@ function getAnswer() {
 
     var answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("question").value = "";
-    document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
+    document.getElementById("answer").innerHTML = answer;
     // Response voice by Speech Synthesis API, see more at: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
     utterance = new SpeechSynthesisUtterance(answer);
     speechSynthesis.speak(utterance);

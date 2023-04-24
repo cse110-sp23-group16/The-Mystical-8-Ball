@@ -4,20 +4,22 @@
 	<title>Magic 8 Ball App</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-	<div class="container">
+<body id="play">
+	<div style="position: relative;">
 		<!-- Change image with button -->
-		<div class="split">
-			<img id="8ball" src="./assets/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
-			<br>
-			<button id="changeImage" onclick="changeImage()">Click me to change image</button>
+		<div class="main">
+			<div class="item eight-ball">
+				<div id="answer">Please ask a yes / no question</div>
+				<img class="eight-ball" id="eight-ball-image" src="./assets/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+				<div id="eight-ball-shadow"></div>
+			<div>
+			<input id="question" type="text" class="item input-response" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
+			<button class="item" onclick="getAnswer()">Play</button>
+			<button class='item eight-ball' id="changeImage" onclick="changeImage()">Click me to change image</button>
 		</div>
 		<!-- User input question and get response from clicking play button -->
-		<div id="input-response-field">
-			<p id="answer">Please ask a yes / no question</p>
-			<input type="text" id="question" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
-			<button id="play-button" onclick="getAnswer()">Play</button>
-	  </div>
+		
+		
 	</div>
 	<script src="App.js"></script>
 </body>

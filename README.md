@@ -1,5 +1,9 @@
 # The-Mystical-8-Ball
 
+## Developer Note
+
+- Aiden: While working on the UI, I tried to use flexbox for the containers (as I have never used it before), and I struggled a lot with the position of the items the sizing. Also I often uncertain about how to orgainize the code (especially for the css code). 
+
 ## Features
 
 **Basic input-response function**
