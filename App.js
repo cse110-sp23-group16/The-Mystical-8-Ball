@@ -41,3 +41,9 @@ function getAnswer() {
     document.getElementById("question").value = "";
     document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
   }
+
+// Function to play sound when the button "Play" is clicked
+function sound(){
+  var snd = new Audio('./assets/magic-8-ball-sound.mp3')
+  snd.play();
+}
