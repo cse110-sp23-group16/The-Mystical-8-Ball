@@ -2,7 +2,7 @@ body {
     /*background-image: url('assests/background_temp.jpg');*/
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: fixed;
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
