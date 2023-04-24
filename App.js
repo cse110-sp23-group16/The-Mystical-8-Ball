@@ -1,6 +1,3 @@
-//TODO: Shashank: fill the array with a bunch chatGPT gen responses
-const listOfTextToDisplay = ['temp']
-
 // Add JavaScript code here to handle button clicks and display the 8 ball answer.
 const listOfImages = ['./assests/8ball1.png', "./assests/8ball2.jpg"]
 function changeImage(){
