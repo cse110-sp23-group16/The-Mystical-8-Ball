@@ -9,9 +9,8 @@ function changeImage(){
 
 // Function to handle button clicks and display the 8 ball answer.
 function getAnswer() {
-    console.log('getAnswer');
-
     var question = document.getElementById("question").value;
+    if (!question) { return; }
     var answers = [
       "It is certain.",
       "It is decidedly so.",
@@ -34,7 +33,11 @@ function getAnswer() {
       "Very doubtful.",
       "My reply is no."
     ];
+
     var answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("question").value = "";
     document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
+    // Response voice by Speech Synthesis API, see more at: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+    utterance = new SpeechSynthesisUtterance(answer);
+    speechSynthesis.speak(utterance);
   }
