@@ -28,6 +28,10 @@ button:hover {
     background-color: #4b4b4b;
 }
 
+button:active {
+    background-color: #252525;
+}
+
 input {
     margin-top: 5%;
     width: 50%;
@@ -64,7 +68,57 @@ img.eight-ball {
     border-radius: 50%;     /* make it circular */
 }
 
-div#eight-ball-shadow {
+div.eight-ball.filter {
+    /* Position (overlap with the 8-ball img) */
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    transform: translate(0vh, 1.54vh);
+    z-index: 3;
+    /* Size and Shape (same as the 8-ball img) */ 
+    max-width: 60vh;
+    width: auto;
+    max-height: 60vh;
+    height: auto;
+    border-radius: 50%;     /* make it circular */
+    /* Decoration */
+}
+
+div.eight-ball.filter::before {
+    content: '';
+    /* Position (overlap with the 8-ball img) */
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+    /* Size and Shape (same as the 8-ball img) */ 
+    max-width: 60vh;
+    width: auto;
+    max-height: 60vh;
+    height: auto;
+    border-radius: 50%;     /* make it circular */
+    background: radial-gradient(ellipse 90% 80% at 50% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 1) 70%);
+}
+
+div.eight-ball.filter::after {
+    content: '';
+    /* Position (overlap with the 8-ball img) */
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    transform: rotate(-40deg);
+    z-index: 4;
+    /* Size and Shape (same as the 8-ball img) */ 
+    max-width: 60vh;
+    width: auto;
+    max-height: 60vh;
+    height: auto;
+    border-radius: 50%;     /* make it circular */
+    /* Decoration */
+    background: radial-gradient(ellipse 200% 30% at 100% 0%, #ffffff71, rgba(0, 0, 0, 0) 60%);
+}
+
+div.eight-ball.shadow {
     /* Position */
     position: absolute;
     left: 0; right: 0;
@@ -109,10 +163,10 @@ div#answer {
     top: 0; left: 0; bottom: 0; right: 0;
     z-index: 3;
     /* Decoration */
-    color: rgb(210, 210, 210);
+    color: rgb(201, 200, 200);
     background-color: rgb(0, 0, 0);
     border-radius: 20vh;
-    border: 5px solid rgb(60, 60, 60);
+    border: 5px solid rgb(60, 60, 60);    
     /* Size */
     width: 40vh;
     height: 20vh;
@@ -121,6 +175,8 @@ div#answer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 3vh;
+    font-size: 3.2vh;
     line-height: 4vh;
+    text-shadow: 0px 3px 3px rgb(200, 200, 200);
 }
+
