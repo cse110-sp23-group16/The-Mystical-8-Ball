@@ -10,8 +10,9 @@ function changeImage(){
     image.src = listOfImages[random];
 }
 
+// Function to say loading for the answer to have a delay in response
 function loadingAns() {
-  console.log('loading answer');
+  console.log('loading answer'); //log message in console for debugging purposes
   let question = document.getElementById("question").value;
   let answer = "loading"
   document.getElementById("question").value = "";
