@@ -55,5 +55,5 @@ function sound(question){
   if (question) {
     var snd = new Audio('../assets/magic-8-ball-sound.mp3')
     return snd.play();
-  }
+  } //TODO: else play another sound
 }
