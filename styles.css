@@ -156,19 +156,18 @@ input.input-response {
     height: 5vh;
 }
 
-div#answer {
+div.answer {
     /* Position */
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
-    z-index: 3;
+    z-index: 5;
     /* Decoration */
-    color: rgb(201, 200, 200);
-    background-color: rgb(0, 0, 0);
-    border-radius: 20vh;
-    border: 5px solid rgb(60, 60, 60);    
+    color: rgb(200, 200, 200);
+    background: radial-gradient(circle at 50% 150%, rgb(182, 182, 182) 0%, rgb(81, 81, 81) 10%, rgba(25,25,25,1) 60%);
+    border-radius: 20vh;    
     /* Size */
-    width: 40vh;
+    width: 38vh;
     height: 20vh;
     /* Content */
     display: flex;
@@ -180,3 +179,25 @@ div#answer {
     text-shadow: 0px 3px 4px rgb(150, 150, 150);
 }
 
+div.answer.border {
+    content: '';
+    /* Position */
+    transform: translateY(2%);
+    z-index: 4;
+    /* Decoration */
+    background: linear-gradient(0deg, rgb(80, 80, 80) 0%, rgba(47,47,47,1) 10%, rgba(25,25,25,1) 100%);
+    /* Size */
+    width: 40vh;
+    height: 21vh;
+}
+
+div.answer.inner {
+    content: '';
+    /* Position */
+    transform: translateY(2%);
+    /* Decoration */
+    background: radial-gradient(circle at 50% 80%, rgb(98, 98, 98) 0%, rgba(47,47,47,1) 70%, rgba(25,25,25,1) 100%);
+    /* Size */
+    width: 40vh;
+    height: 21vh;
+}
