@@ -3,14 +3,22 @@ const listOfImages = ['../assets/8ball1.png', "../assets/8ball2.png", "../assets
 function changeImage(){
     console.log('changeImage() call');
     let random = Math.floor(Math.random() * listOfImages.length);
-    let image = document.getElementById("8ball");
+    let image = document.getElementById("eight-ball-image");
     image.src = listOfImages[random];
 }
 
+function handleOnPlay(){
+  const question = document.getElementById("question").value;
+  sound(question);
+  getAnswer(question);
+}
+
 // Function to handle button clicks and display the 8 ball answer.
-function getAnswer() {
-    var question = document.getElementById("question").value;
-    if (!question) { return; }
+function getAnswer(question) {
+    if (!question) {
+      document.getElementById("answer").innerHTML = "Please ask a yes / no question";
+      return;
+    }
     var answers = [
       "It is certain.",
       "It is decidedly so.",
@@ -36,14 +44,16 @@ function getAnswer() {
 
     var answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("question").value = "";
-    document.getElementById("answer").innerHTML = "<strong>Question:</strong> " + question + "<br><strong>Answer:</strong> " + answer;
+    document.getElementById("answer").innerHTML = answer;
     // Response voice by Speech Synthesis API, see more at: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
     utterance = new SpeechSynthesisUtterance(answer);
     speechSynthesis.speak(utterance);
   }
 
 // Function to play sound when the button "Play" is clicked
-function sound(){
-  var snd = new Audio('../assets/magic-8-ball-sound.mp3')
-  snd.play();
+function sound(question){
+  if (question) {
+    var snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    return snd.play();
+  } //TODO: else play another sound
 }
