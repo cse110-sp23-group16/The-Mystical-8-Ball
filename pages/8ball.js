@@ -7,12 +7,17 @@ function changeImage(){
     image.src = listOfImages[random];
 }
 
+function handleOnPlay(){
+  const question = document.getElementById("question").value;
+  sound(question);
+  getAnswer(question);
+}
+
 // Function to handle button clicks and display the 8 ball answer.
-function getAnswer() {
-    var question = document.getElementById("question").value;
-    if (!question) { 
+function getAnswer(question) {
+    if (!question) {
       document.getElementById("answer").innerHTML = "Please ask a yes / no question";
-      return; 
+      return;
     }
     var answers = [
       "It is certain.",
@@ -46,7 +51,9 @@ function getAnswer() {
   }
 
 // Function to play sound when the button "Play" is clicked
-function sound(){
-  var snd = new Audio('../assets/magic-8-ball-sound.mp3')
-  snd.play();
+function sound(question){
+  if (question) {
+    var snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    return snd.play();
+  }
 }
