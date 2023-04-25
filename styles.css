@@ -8,6 +8,10 @@ body {
     padding: 0;
 }
 
+body#play {
+    background-color: #64747c;
+}
+
 button {
     display: block;
     padding: 10px 20px;
