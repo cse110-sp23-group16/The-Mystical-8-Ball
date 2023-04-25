@@ -13,10 +13,10 @@
 				<div id="eight-ball-shadow"></div>
 			<div>
 			<input id="question" type="text" class="item input-response" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
-			<button class="item" onclick="getAnswer()">Play</button>
+			<button class="item" onclick="getAnswer(); sound();">Play</button>
 			<button class='item eight-ball' id="changeImage" onclick="changeImage()">Click me to change image</button>
 		</div>
 	</div>
-	<script src="8ball.js"></script>
+	<script src="./8ball.js"></script>
 </body>
 </html>
