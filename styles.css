@@ -8,10 +8,6 @@ body {
     padding: 0;
 }
 
-body#play {
-    background-color: #64747c;
-}
-
 button {
     display: block;
     padding: 10px 20px;
@@ -39,13 +35,15 @@ input {
     font-size: 120%;
 }
 
-/* 8-ball styles */
+/* 8-ball page */
 
-div.main{
-    /* Container */
+body#play {
+    background-color: #64747c;
+}
+
+div.main {  /* container for all the components at the center */
     width: 70vh;    /* looks best adapt to the view height */
     margin: auto;
-    /* Content */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +59,7 @@ div.eight-ball {    /* 8-ball container (img + response box) */
 }
 
 img.eight-ball {
-    max-width: 60vh;
+    max-width: 60vh;    /* This size looks the best */
     width: auto;
     max-height: 60vh;
     height: auto;
@@ -69,107 +67,74 @@ img.eight-ball {
 }
 
 div.eight-ball.filter {
-    /* Position (overlap with the 8-ball img) */
+    /* position to overlap with the 8-ball img */
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     transform: translate(0vh, 1.54vh);
     z-index: 3;
-    /* Size and Shape (same as the 8-ball img) */ 
-    max-width: 60vh;
-    width: auto;
-    max-height: 60vh;
-    height: auto;
-    border-radius: 50%;     /* make it circular */
-    /* Decoration */
 }
 
-div.eight-ball.filter::before {
+div.eight-ball.filter::before {     /* shadow effect on ball */
     content: '';
-    /* Position (overlap with the 8-ball img) */
+    /* position to overlap with the 8-ball img */
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     z-index: 1;
-    /* Size and Shape (same as the 8-ball img) */ 
+    /* size and shape same as the 8-ball img */ 
     max-width: 60vh;
     width: auto;
     max-height: 60vh;
     height: auto;
-    border-radius: 50%;     /* make it circular */
+    border-radius: 50%;
+    /* shadow effect */
     background: radial-gradient(ellipse 90% 80% at 50% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 1) 70%);
 }
 
-div.eight-ball.filter::after {
+div.eight-ball.filter::after {     /* illumination effect on ball */
     content: '';
-    /* Position (overlap with the 8-ball img) */
+    /* position to overlap with the 8-ball img */
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     transform: rotate(-40deg);
     z-index: 4;
-    /* Size and Shape (same as the 8-ball img) */ 
+    /* size and shape same as the 8-ball img */ 
     max-width: 60vh;
     width: auto;
     max-height: 60vh;
     height: auto;
-    border-radius: 50%;     /* make it circular */
-    /* Decoration */
+    border-radius: 50%;
+    /* illumination effect */
     background: radial-gradient(ellipse 200% 30% at 100% 0%, #ffffff71, rgba(0, 0, 0, 0) 60%);
 }
 
-div.eight-ball.shadow {
-    /* Position */
+div.eight-ball.shadow {     /* shadow effect at bottom of the ball */
     position: absolute;
     left: 0; right: 0;
     transform: translate(0%, -28vh);
     margin: auto;
     z-index: -1;
-    /* Decoration */
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 0 20vh 4vh black;
-    /* Size */
     width: 40vh;
     height: 10vh;
 }
 
-/* Input and response components styles */
-
-div.input-response {
-    /* Position */
-    position: absolute;
-    transform: translate(50%, 100%);
-    /* Size */
-    width: 30vw;
-    height: 20vh;
-}
-
-input.input-response {
-    /* Position */
-    margin: auto;
-    margin-top: 5vh;
-    /* Decoration */
-    border-radius: 5px;
-    /* Size */
-    width: 94%;
-    height: 5vh;
-}
-
-div.answer {
-    /* Position */
+div.answer {    /* answer display on the ball */
+    /* position slightly above center of the ball */
     position: absolute;
     margin: auto;
     top: 0; left: 0; bottom: 0; right: 0;
     z-index: 5;
-    /* Decoration */
     color: rgb(200, 200, 200);
-    background: radial-gradient(circle at 50% 150%, rgb(182, 182, 182) 0%, rgb(81, 81, 81) 10%, rgba(25,25,25,1) 60%);
+    /* some inner illumation effect */
+    background: radial-gradient(circle at 50% 160%, rgb(182, 182, 182) 0%, rgb(81, 81, 81) 10%, rgba(25,25,25,1) 60%);
     border-radius: 20vh;    
-    /* Size */
     width: 38vh;
     height: 20vh;
-    /* Content */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,23 +146,24 @@ div.answer {
 
 div.answer.border {
     content: '';
-    /* Position */
     transform: translateY(2%);
     z-index: 4;
-    /* Decoration */
     background: linear-gradient(0deg, rgb(80, 80, 80) 0%, rgba(47,47,47,1) 10%, rgba(25,25,25,1) 100%);
-    /* Size */
     width: 40vh;
     height: 21vh;
 }
 
-div.answer.inner {
-    content: '';
-    /* Position */
-    transform: translateY(2%);
-    /* Decoration */
-    background: radial-gradient(circle at 50% 80%, rgb(98, 98, 98) 0%, rgba(47,47,47,1) 70%, rgba(25,25,25,1) 100%);
-    /* Size */
-    width: 40vh;
-    height: 21vh;
+div.input-response {    /* container for input box and play button */
+    position: absolute;
+    transform: translate(50%, 100%);
+    width: 30vw;
+    height: 20vh;
+}
+
+input.input-response {  /* question input box */
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 5px;
+    width: 94%;
+    height: 5vh;
 }
