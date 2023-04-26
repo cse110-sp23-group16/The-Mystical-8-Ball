@@ -7,14 +7,24 @@ function changeImage(){
     image.src = listOfImages[random];
 }
 
+//Function to load answer and play sound when button is clicked
 function handleOnPlay(){
   const question = document.getElementById("question").value;
+  loadingAns(question);
   sound(question);
-  getAnswer(question);
+}
+
+//Function to load the answer to show a delay in response
+function loadingAns(question) {
+  if (question){
+    console.log('loading answer');
+    document.getElementById("answer").innerHTML = "loading";
+  }
 }
 
 // Function to handle button clicks and display the 8 ball answer.
-function getAnswer(question) {
+function getAnswer() {
+  const question = document.getElementById("question").value;
     if (!question) {
       document.getElementById("answer").innerHTML = "Please ask a yes / no question";
       return;
@@ -54,6 +64,14 @@ function getAnswer(question) {
 function sound(question){
   if (question) {
     var snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    var loops = 2;       
+    var count = 0;
+      snd.onended = function() {
+          if(count <= loops){
+            count++;
+            snd.play();
+        }
+      };
     return snd.play();
-  } //TODO: else play another sound
+  }
 }

@@ -15,3 +15,9 @@
 **Response voice**
   - Text speech function to read up responses from the magic 8-ball.
   - It is just the default text-speech api.
+
+**Delayed Response**
+ - The loadingAns function in App.js is called when the button is clicked (line 20 index.html). This displays the answer as loading while the answer is being picked randomly. The getElementByID method and .value of it's return gets the reference with the specified value. 
+
+**Sound Effect on click of Button**
+  - The sound function in App.js is called when the button is clicked (line 20 index.html). It uses the audio file in the assets folder, which plays a mystical sound effect on the click of the button.The new Audio method is called to access the audio file and set to a variable that's used to play the audio. The play method loads and starts the playback of the audio file defined.
