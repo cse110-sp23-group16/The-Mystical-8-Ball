@@ -2,24 +2,32 @@
 <html>
 <head>
 	<title>Magic 8 Ball App</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            width: 100%;
+            background-image: url('assets/LandingBackground.png');
+            background-size: 100% 1024px;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;  
+        }
+        button {
+            position: relative;
+            top: 37em;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-	<button id="top-left-button">Reset</button>
-	<div class="container">
-		<!-- Change image with button -->
-		<div class="split">
-			<img id="8ball" src="./assets/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
-			<br>
-			<button id="changeImage" onclick="changeImage()">Click me to change image</button>
-		</div>
-		<!-- User input question and get response from clicking play button -->
-		<div id="input-response-field">
-			<p id="answer"></p>
-			<input type="text" id="question" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
-			<button id="play-button" onclick="loadingAns(), setTimeout(getAnswer, 5000); sound()">Play</button>
-	  </div>
-	</div>
-	<script src="App.js"></script>
+    <a href="./pages/8ball.html"><button>Ask the Magic 8 Ball</button></a>
 </body>
 </html>

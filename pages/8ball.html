@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic 8 Ball App</title>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body id="play">
+	<div style="position: relative;">
+		<div class="main">
+			<div class="item eight-ball">
+				<div id="answer">Please ask a yes / no question</div>
+				<img class="eight-ball" id="eight-ball-image" src="../assets/8ball1.png" alt="picture of 8 ball" width="75%" height="75%">
+				<div id="eight-ball-shadow"></div>
+			<div>
+			<input id="question" type="text" class="item input-response" placeholder="Enter your question here" onkeydown="if(event.key==='Enter'){getAnswer()}">
+			<button class="item" onclick="handleOnPlay()">Play</button>
+			<button class='item eight-ball' id="changeImage" onclick="changeImage()">Click me to change image</button>
+		</div>
+	</div>
+	<script src="./8ball.js"></script>
+</body>
+</html>

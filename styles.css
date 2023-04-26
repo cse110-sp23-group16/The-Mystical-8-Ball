@@ -1,8 +1,6 @@
 body {
-    /*background-image: url('assests/background_temp.jpg');*/
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: repeat;
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
@@ -10,11 +8,12 @@ body {
     padding: 0;
 }
 
-h1 {
-    margin-top: 50px;
+body#play {
+    background-color: #64747c;
 }
 
 button {
+    display: block;
     padding: 10px 20px;
     background-color: #333;
     color: white;
@@ -22,47 +21,11 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
-    margin-top: 20px;
+    margin: auto;
 }
 
-#top-left-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.container{
-    display: flex;
-    transform: translateY(20%);
-}
-.split{
-    width: 50%;
-    position: relative;
-}
-#8ball{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 100%;
-    max-width: 100%;
-}
-
-/* Input and response components style */
-
-#play-button {
-    display: block;
-    margin: 0 auto;
-}
-
-#input-response-field {
-    transform: translateY(50%);
-    width: 50%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10%;
+button:hover {
+    background-color: #4b4b4b;
 }
 
 input {
@@ -72,9 +35,92 @@ input {
     font-size: 120%;
 }
 
-#answer {
-    margin-top: 0%;
-    font-size: 120%;
-    color: black;
-    height: 10px;
+/* 8-ball styles */
+
+div.main{
+    /* Container */
+    width: 70vh;    /* looks best adapt to the view height */
+    margin: auto;
+    /* Content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    margin-top: 3vh;    /* serve as spacing between the items. */
+}
+
+div.eight-ball {    /* 8-ball container (img + response box) */
+    height: 60vh;
+    width: 60vh;
+}
+
+img.eight-ball {
+    max-width: 60vh;
+    width: auto;
+    max-height: 60vh;
+    height: auto;
+    border-radius: 50%;     /* make it circular */
+}
+
+div#eight-ball-shadow {
+    /* Position */
+    position: absolute;
+    left: 0; right: 0;
+    transform: translate(0%, -28vh);
+    margin: auto;
+    z-index: -1;
+    /* Decoration */
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 20vh 4vh black;
+    /* Size */
+    width: 40vh;
+    height: 10vh;
+}
+
+/* Input and response components styles */
+
+div.input-response {
+    /* Position */
+    position: absolute;
+    transform: translate(50%, 100%);
+    /* Size */
+    width: 30vw;
+    height: 20vh;
+}
+
+input.input-response {
+    /* Position */
+    margin: auto;
+    margin-top: 5vh;
+    /* Decoration */
+    border-radius: 5px;
+    /* Size */
+    width: 94%;
+    height: 5vh;
+}
+
+div#answer {
+    /* Position */
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 3;
+    /* Decoration */
+    color: rgb(210, 210, 210);
+    background-color: rgb(0, 0, 0);
+    border-radius: 20vh;
+    border: 5px solid rgb(60, 60, 60);
+    /* Size */
+    width: 40vh;
+    height: 20vh;
+    /* Content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vh;
+    line-height: 4vh;
 }
