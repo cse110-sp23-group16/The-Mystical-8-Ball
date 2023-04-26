@@ -1,10 +1,22 @@
 // Add JavaScript code here to handle button clicks and display the 8 ball answer.
-const listOfImages = ['../assets/8ball1.png', "../assets/8ball2.png", "../assets/8ball3.png", "../assets/8ball4.png", "../assets/8ball5.png", "../assets/8ball6.png", "../assets/8ball7.png"]
+const listOfImages = ['../assets/8ball1.png', "../assets/8ball2.png", "../assets/8ball3.png", "../assets/8ball4.png", "../assets/8ball5.png", "../assets/8ball6.png", "../assets/8ball7.png"];
+const recentImages = [];
+
 function changeImage(){
     console.log('changeImage() call');
-    let random = Math.floor(Math.random() * listOfImages.length);
+    
+    // Get smart list
+    let filteredImages = listOfImages.filter(image => !recentImages.includes(image));
+
+    // Get image, update the recent array
+    let random = Math.floor(Math.random() * filteredImages.length);
     let image = document.getElementById("eight-ball-image");
-    image.src = listOfImages[random];
+    image_name = filteredImages[random];
+    image.src = image_name
+    recentImages.push(image_name);
+    if (recentImages.length > 2) {
+        recentImages.shift();
+    }
 }
 
 function handleOnPlay(){
