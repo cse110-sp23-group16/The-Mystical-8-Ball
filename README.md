@@ -15,3 +15,9 @@
 **Response voice**
   - Text speech function to read up responses from the magic 8-ball.
   - It is just the default text-speech api.
+
+# Changelog
+
+## [4e3eb53](https://github.com/cse110-sp23-group16/The-Mystical-8-Ball/commit/4e3eb530c4aef75ce2e4dfe3738482671ff4b83c)
+
+- Added the initial Midjourney images, the 8-ball's are sourced from the Midjourney gallary, however the landing page was a custom generation
