@@ -21,3 +21,9 @@
 
 **Sound Effect on click of Button**
   - The sound function in App.js is called when the button is clicked (line 20 index.html). It uses the audio file in the assets folder, which plays a mystical sound effect on the click of the button.The new Audio method is called to access the audio file and set to a variable that's used to play the audio. The play method loads and starts the playback of the audio file defined.
+
+# Changelog
+
+## [4e3eb53](https://github.com/cse110-sp23-group16/The-Mystical-8-Ball/commit/4e3eb530c4aef75ce2e4dfe3738482671ff4b83c)
+
+- Added the initial Midjourney images, the 8-ball's are sourced from the Midjourney gallary, however the landing page was a custom generation
