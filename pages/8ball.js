@@ -21,17 +21,20 @@ function changeImage(){
 
 function handleOnPlay(){
   const question = document.getElementById("question").value;
+  document.getElementById("answer").innerHTML = "loading";
+
   sound(question);
-  getAnswer(question);
+
 }
 
 // Function to handle button clicks and display the 8 ball answer.
-function getAnswer(question) {
+function getAnswer() {
+  const question = document.getElementById("question").value;
     if (!question) {
       document.getElementById("answer").innerHTML = "Please ask a yes / no question";
       return;
     }
-    var answers = [
+    let answers = [
       "It is certain.",
       "It is decidedly so.",
       "Without a doubt.",
@@ -54,18 +57,21 @@ function getAnswer(question) {
       "My reply is no."
     ];
 
-    var answer = answers[Math.floor(Math.random() * answers.length)];
+    let answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("question").value = "";
     document.getElementById("answer").innerHTML = answer;
     // Response voice by Speech Synthesis API, see more at: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
-    utterance = new SpeechSynthesisUtterance(answer);
+    let utterance = new SpeechSynthesisUtterance(answer);
     speechSynthesis.speak(utterance);
   }
 
 // Function to play sound when the button "Play" is clicked
 function sound(question){
   if (question) {
-    var snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    let snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    snd.onended = _ => getAnswer()
+
     return snd.play();
-  } //TODO: else play another sound
+  }
+  getAnswer();
 }
