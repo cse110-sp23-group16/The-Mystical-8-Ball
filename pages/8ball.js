@@ -8,18 +8,16 @@ function changeImage(){
 }
 
 //Function to load answer and play sound when button is clicked
+let randTime = Math.floor((Math.random() * (6000 - 2000 + 1)) + 2000);
 function handleOnPlay(){
   const question = document.getElementById("question").value;
-  loadingAns(question);
   sound(question);
+  setTimeout(getAnswer, randTime);
 }
 
 //Function to load the answer to show a delay in response
 function loadingAns(question) {
-  if (question){
-    console.log('loading answer');
-    document.getElementById("answer").innerHTML = "loading";
-  }
+  document.getElementById("answer").innerHTML = "loading";
 }
 
 // Function to handle button clicks and display the 8 ball answer.
@@ -29,7 +27,7 @@ function getAnswer() {
       document.getElementById("answer").innerHTML = "Please ask a yes / no question";
       return;
     }
-    var answers = [
+    let answers = [
       "It is certain.",
       "It is decidedly so.",
       "Without a doubt.",
@@ -52,20 +50,20 @@ function getAnswer() {
       "My reply is no."
     ];
 
-    var answer = answers[Math.floor(Math.random() * answers.length)];
+    let answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("question").value = "";
     document.getElementById("answer").innerHTML = answer;
     // Response voice by Speech Synthesis API, see more at: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
-    utterance = new SpeechSynthesisUtterance(answer);
+    let utterance = new SpeechSynthesisUtterance(answer);
     speechSynthesis.speak(utterance);
   }
 
 // Function to play sound when the button "Play" is clicked
 function sound(question){
   if (question) {
-    var snd = new Audio('../assets/magic-8-ball-sound.mp3')
-    var loops = 2;       
-    var count = 0;
+    let snd = new Audio('../assets/magic-8-ball-sound.mp3')
+    let loops = (randTime/1000) - 3;  
+    let count = 0;
       snd.onended = function() {
           if(count <= loops){
             count++;
