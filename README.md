@@ -6,6 +6,8 @@
 
 - Here is the link to our findings about generative AI presentation:https://github.com/cse110-sp23-group16/The-Mystical-8-Ball/blob/main/CSE%20110%20Slides.pdf
 
+- Here is the link to our demo video: https://github.com/cse110-sp23-group16/The-Mystical-8-Ball/blob/main/demo_magic8ball.mp4
+
 ## Features
 
 **Basic input-response function**
