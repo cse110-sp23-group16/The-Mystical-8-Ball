@@ -4,6 +4,8 @@
 
 - Aiden: While working on the UI, I tried to use flexbox for the containers (as I have never used it before), and I struggled a lot with the position of the items the sizing. Also I often uncertain about how to orgainize the code (especially for the css code). 
 
+- Here is the link to our findings about generative AI presentation:https://github.com/cse110-sp23-group16/The-Mystical-8-Ball/blob/main/CSE%20110%20Slides.pdf
+
 ## Features
 
 **Basic input-response function**
